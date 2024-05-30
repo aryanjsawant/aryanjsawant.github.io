@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="media/All rounder squad cropped transparent.png">
+    <title>Aryan Sawant</title>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .poppinsSansSerif {
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .lobsterTwoRegular {
+            font-family: "Lobster Two", sans-serif;
+            font-weight: 550;
+            font-style: normal;
+            font-size: 1.2rem;
+        }
+        #linkers{
+            display: flex;
+            justify-content: center;
+        }
+        #mute-unmute-btn {
+            width: 32px;
+            height:32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 2.5vh;
+            z-index: 3;
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+        #mute-unmute-btn i {
+            font-size: 24px;
+            color: inherit;
+        }
+        .tooltip-template {
+            visibility: visible;
+            width: fit-content;
+            height: fit-content;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+            position: absolute;
+            transition: all 0.5s ease;
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: xs;
+        }
+        .tooltip-template::after {
+            content: "";
+        }
+        @media only screen and (max-width: 600px) {
+            body{
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                flex-direction: column;
+                background: #B6D5F4;
+                transition: background-color 1s linear;
+                overflow-x:hidden;
+                width: 101vw;
+                /* height: 300vh; */
+                /* height: min(fit-content,300vh); */
+                height: f;
+                overflow-y: auto;
+                background-image: linear-gradient(1deg, 
+                        #CE7AD1 ,
+                        #E599CA ,
+                        #F2B9C3 ,
+                        #FFDABC ,
+                        #FF8B80  
+                        );
+                background-size: 20000%;
+                margin: 0px;
+                padding: 0px;
+                animation: moveBackgroundt 15s infinite ease-in-out alternate;
+            }
+            @keyframes moveBackgroundt {
+                0% {
+                    background-position: 0% 5%;
+                }
+                50% {
+                    background-position: 40% 5%;
+                }
+                100% {
+                    background-position: 0% 5%;
+                }
+            }
+            .title{
+                margin: 0%;
+                font-size: small;
+                display: grid;
+                align-items: center;
+                column-gap: 1.6rem;
+            }
+            .title::before,.title::after{
+                content: "";
+                height: 2px;
+                background-color: rgba(255, 255, 255, 0.322);
+                display: block;
+            } 
+            #content{
+                opacity: 1;
+                position: relative;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                border-top-left-radius: 2% 5%;
+                border-top-right-radius: 2% 5%;
+                transition: all 1s ease;
+                color: black;
+                padding: 1.5%;
+                padding-top: 0%;
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.37) , transparent);
+                width: 98%;
+                order: 2;
+                margin: auto;
+                margin-top: 4%;
+            }
+            #links{
+                display: none;
+            }
+            .pointer-follower{
+                color: transparent;
+            }
+            #linkers{
+                justify-content: space-around;
+                margin: 1%;
+                width: 30%;
+            }
+            #linkers > div,#linkers > a{
+                height:20px;
+                width: 20px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background-color: #ffffff83;
+                margin: 1%;
+                padding: 1%;
+            }
+            #linkers > div> img{
+                width: 90%;
+                height:90%;
+            }
+            .pointer-follower{
+                z-index: 3;
+            }
+            #mute-unmute-btn{
+                top:  94%;
+                left: 90%;
+                position: fixed;
+            }
+        }
+        @media only screen and (min-width: 601px) {
+            /*Laptops and desktops */
+
+            body{
+                background: linear-gradient(to right, 
+                    #070F2B 0%,
+                    #1B1A55 10%,
+                    #535C91 20%,
+                    #C899C2 30%,
+                    #CB8ACA 40%,
+                    #CE7AD1 50%,
+                    #E599CA 60%,
+                    #F2B9C3 70%,
+                    #FFDABC 80%,
+                    #FF8B80 90% 
+                );
+                background-size: 500%;
+                display: flex;
+                justify-content: flex-start;
+                transition: background-color 1s ease;
+                height: 100vh;
+                overflow: auto;
+                z-index: -2;
+                animation: moveBackgroundt 17s infinite ease-in-out alternate;
+                animation: bg 2s forwards;
+            }
+            .changeForward{
+                animation: bg 2s forwards;
+            }
+            .changeBackwards{
+                animation: bg 2s reverse;
+            }
+            @keyframes moveBackgroundt {
+                0% {
+                    background-position: 0% 5%;
+                }
+                50% {
+                    background-position: 10% 5%;
+                }
+                100% {
+                    background-position: 0% 5%;
+                }
+            }
+            @keyframes bg{
+                0%{
+                    background-position: left;
+                }
+                100%{
+                    background-position: right;
+                }
+            } 
+            #slider{
+                display: flex;
+                justify-content:space-around;
+                flex-direction: column;
+                height: 98vh;
+                width: 15%;
+                border-top-left-radius:  5% 2%;
+                border-top-right-radius: 5% 2%;
+                border-bottom-left-radius:  5% 2%;
+                border-bottom-right-radius: 5% 2%;
+                position:sticky;
+                transition: all 1s ease;
+                z-index: 2;
+                left: 100%;
+            }
+            #content{
+                right: 100%;
+                color: black;
+                opacity: 1;
+                padding: 1.5%;
+                padding-top: 0%;
+                visibility: visible;
+                position: sticky;
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                width: 85%;
+                margin:2%;
+                margin-top: 0%;
+                border-top-left-radius: 2% 5%;
+                border-top-right-radius: 2% 5%;
+                transition: opacity 1s ease;
+                background-image: linear-gradient(rgb(254, 220, 204), transparent);
+            }
+            .switch-container{
+                display: flex;
+                justify-content: center;
+            }
+            #footer{
+                display: none;
+            }
+            #WelcomeContainer{
+                margin: 7%;
+                display: none;
+                position: absolute;
+                height: 100%;
+                right: 0%;
+                width: 85%;
+            }
+            #Welcome1,#Welcome2{
+                display: none;
+                flex-direction: row;
+                justify-content: flex-end;
+                height: fit-content;
+                margin: 0%;
+                overflow: hidden;
+                z-index: 2;
+            }
+            #updown{
+                color: #FFDABC;
+                font-size: 500%;
+                display: flex;
+                transform: translateY(100%);
+                margin: 0%;
+                width: fit-content;
+                animation: dis 5s ease-in-out; 
+            }
+            #updown:active{
+                display: block;
+            }
+            .pointer-follower{
+                color: #1b1a55d0;
+            }
+            .fas{
+                color: #1b1a55;
+            }
+            #linkers{
+                justify-content: flex-start;
+                flex-flow: row wrap;
+            }
+            #linkers > div,#linkers > a{
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background-color: #ffffff83;
+                margin: 1%;
+                padding: 1%;
+            }
+            #linkers > div > img{
+                width: 100%;
+                height: 100%;
+            }
+            #mute-unmute-btn{
+                top: 90%;
+                left: 3.5%;
+                position: fixed;
+            }
+        }
+        .snow-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            transition: opacity 1s ease;
+            overflow: hidden;
+        }
+        #sno{
+            opacity: 0.4;
+        }
+        .snow-bg:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://library.elementor.com/resources/christmas-snow-effect/s1.png'), url('https://library.elementor.com/resources/christmas-snow-effect/s2.png'), url('https://library.elementor.com/resources/christmas-snow-effect/s3.png');
+            animation: snow 10s linear infinite;
+            transition: all 1s;
+        }
+        @keyframes snow {
+            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+            50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+            100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+        }
+        .fas{
+            transition: all 0s;
+        }
+    </style>
+</head>
+<body>
+    <div class="snow-bg" id="sno"></div>
+    <audio id="background-music" autoplay loop muted>
+        <source src="media/Home(extended version).wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="mute-unmute-btn">
+        <i class="fa-solid fa-volume-xmark fa-xs"></i>
+    </div>
+    <div id="content" style="width: 100%; overflow:visible;" class="lobsterTwoRegular pointer-follower">
+        <h1 id="MainHeading">All Rounder Squad</h1>
+        <span>Before the <a href="https://www.youtube.com/@all-roundersquad7252" target="_blank" style="text-decoration: underline; color: inherit;">youtube channel</a>, it all started in the ninth grade when my obsession for listening to songs sky rocketed. I loved how music could just elevate your emotions like it was witchcraft except the fact that it actually existed and people make it. I wanted to learn how to produce music like the greats in the music industry such as Skrillex. I saw a youtube video in which I came to know of the software using which I could create professional music. I started learning it slowly. In my building, two of my friends too were interested in creating music. So we three met up and posted a few songs together. We did not gain too much traction. But I was pretty impressed with what I had made and how many views it had gained online. We continued creating and posting media slowly over time until we got tangled in our educations and went our separate ways.</span>
+        <br>
+        <p>Now, this channel is on hold as all three of the members live very far away and don't talk much. But who knows, maybe someday in the distant future we could come together again and make something new again.
+        But at the moment, I post media anonymously online to see what type of media pleases the social media's algorithm.
+        </p>
+    </div>
+
+    <div id="tooltip-template" class="tooltip-template">
+        <span class="tooltip-text">Default Tooltip Text</span>
+    </div>
+    <script>
+        if(!window.matchMedia("(max-width: 600px)").matches){
+        const cursor = new MouseFollower({
+        container: '.pointer-follower',
+        speed: 0.3});}
+
+        function showTooltip(element, text) {
+            const tooltip = document.getElementById('tooltip-template').cloneNode(true);
+            tooltip.removeAttribute('id');
+            tooltip.querySelector('.tooltip-text').textContent = text;
+
+            const rect = element.getBoundingClientRect();
+            tooltip.style.position = 'absolute';
+            tooltip.style.bottom = '1%';
+            tooltip.style.right = '1%';
+
+            document.body.appendChild(tooltip);
+
+            tooltip.style.left = rect.left + window.pageXOffset + 'px';
+            tooltip.style.top = rect.top + window.pageYOffset - tooltip.offsetHeight + 'px';
+
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+
+            setTimeout(() => {
+                tooltip.remove();
+            }, 1500);
+        }
+
+        const muteUnmuteBtn = document.getElementById('mute-unmute-btn');
+        muteUnmuteBtn.addEventListener('mouseover', () => showTooltip(muteUnmuteBtn, 'Music'));
+        // window.addEventListener('DOMContentLoaded',()=>{
+        //     const clipboards = document.querySelectorAll('.ctc');
+        //     clipboards.forEach(clipboard => {
+        //         clipboard.addEventListener('click', () => showTooltip(clipboard, 'Copied to Clipboard'));
+        //     });
+        // });
+    </script>
+</body>
+</html>

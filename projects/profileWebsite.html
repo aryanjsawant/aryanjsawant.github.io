@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="media/All rounder squad cropped transparent.png">
+    <title>Aryan Sawant</title>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .poppinsSansSerif {
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #linkers{
+            display: flex;
+            justify-content: center;
+        }
+        #mute-unmute-btn {
+            width: 32px;
+            height:32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 2.5vh;
+            z-index: 3;
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+        #mute-unmute-btn i {
+            font-size: 24px;
+            color: inherit;
+        }
+        .tooltip-template {
+            visibility: visible;
+            width: fit-content;
+            height: fit-content;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+            position: absolute;
+            transition: all 0.5s ease;
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: xs;
+        }
+        .tooltip-template::after {
+            content: "";
+        }
+        @media only screen and (max-width: 600px) {
+            body{
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                flex-direction: column;
+                background: #B6D5F4;
+                transition: background-color 1s linear;
+                overflow-x:hidden;
+                width: 101vw;
+                height: fit-content;
+                overflow-y: auto;
+                background-image: linear-gradient(1deg, 
+                            #070F2B ,
+                            #1B1A55 ,
+                            #535C91 
+                        );
+                background-size: 20000%;
+                margin: 0px;
+                padding: 0px;
+                animation: moveBackgroundt 15s infinite ease-in-out alternate;
+            }
+            @keyframes moveBackgroundt {
+                0% {
+                    background-position: 0% 5%;
+                }
+                50% {
+                    background-position: 40% 5%;
+                }
+                100% {
+                    background-position: 0% 5%;
+                }
+            }
+            .title{
+                margin: 0%;
+                font-size: small;
+                display: grid;
+                align-items: center;
+                column-gap: 1.6rem;
+            }
+            .title::before,.title::after{
+                content: "";
+                height: 2px;
+                background-color: rgba(255, 255, 255, 0.322);
+                display: block;
+            } 
+            #content{
+                opacity: 1;
+                position: relative;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                border-top-left-radius: 2% 5%;
+                border-top-right-radius: 2% 5%;
+                transition: all 1s ease;
+                color: white;
+                padding: 1.5%;
+                padding-top: 0%;
+                background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.178) , transparent);
+                width: 98%;
+                order: 2;
+                margin-left: 1.5%;
+                margin-right:1.5%;
+                top: 2%;
+            }
+            #links{
+                display: none;
+            }
+            .pointer-follower{
+                color: transparent;
+            }
+            #linkers{
+                justify-content: space-around;
+                margin: 1%;
+                width: 30%;
+            }
+            #linkers > div,#linkers > a{
+                height:20px;
+                width: 20px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background-color: #ffffff83;
+                margin: 1%;
+                padding: 1%;
+            }
+            #linkers > div> img{
+                width: 90%;
+                height:90%;
+            }
+            .pointer-follower{
+                z-index: 3;
+            }
+            #mute-unmute-btn{
+                top:  94%;
+                left: 90%;
+                position: fixed;
+            }
+        }
+        @media only screen and (min-width: 601px) {
+            /*Laptops and desktops */
+
+            body{
+                background: linear-gradient(to right, 
+                    #070F2B 0%,
+                    #1B1A55 10%,
+                    #535C91 20%,
+                    #C899C2 30%,
+                    #CB8ACA 40%,
+                    #CE7AD1 50%,
+                    #E599CA 60%,
+                    #F2B9C3 70%,
+                    #FFDABC 80%,
+                    #FF8B80 90% 
+                );
+                background-size: 500%;
+                display: flex;
+                justify-content: flex-start;
+                transition: background-color 1s ease;
+                height: 100vh;
+                overflow: auto;
+                z-index: -2;
+                animation: moveBackgroundt 17s infinite ease-in-out alternate;
+            }
+            .changeForward{
+                animation: bg 2s forwards;
+            }
+            .changeBackwards{
+                animation: bg 2s reverse;
+            }
+            @keyframes moveBackgroundt {
+                0% {
+                    background-position: 0% 5%;
+                }
+                50% {
+                    background-position: 7% 5%;
+                }
+                100% {
+                    background-position: 0% 5%;
+                }
+            }
+            @keyframes bg{
+                0%{
+                    background-position: left;
+                }
+                100%{
+                    background-position: right;
+                }
+            } 
+            #slider{
+                display: flex;
+                justify-content:space-around;
+                flex-direction: column;
+                height: 98vh;
+                width: 15%;
+                border-top-left-radius:  5% 2%;
+                border-top-right-radius: 5% 2%;
+                border-bottom-left-radius:  5% 2%;
+                border-bottom-right-radius: 5% 2%;
+                position:sticky;
+                transition: all 1s ease;
+                z-index: 2;
+                left: 100%;
+            }
+            #content{
+                right: 100%;
+                color: white;
+                opacity: 1;
+                padding: 1.5%;
+                padding-top: 0%;
+                visibility: visible;
+                position: sticky;
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                width: 85%;
+                margin:2%;
+                margin-top: 0%;
+                border-top-left-radius: 2% 5%;
+                border-top-right-radius: 2% 5%;
+                transition: opacity 1s ease;
+                background-image: linear-gradient(to bottom, #1d1c4dea , transparent);
+            }
+            .switch-container{
+                display: flex;
+                justify-content: center;
+            }
+            #footer{
+                display: none;
+            }
+            #WelcomeContainer{
+                margin: 7%;
+                display: none;
+                position: absolute;
+                height: 100%;
+                right: 0%;
+                width: 85%;
+            }
+            #Welcome1,#Welcome2{
+                display: none;
+                flex-direction: row;
+                justify-content: flex-end;
+                height: fit-content;
+                margin: 0%;
+                overflow: hidden;
+                z-index: 2;
+            }
+            #updown{
+                color: #FFDABC;
+                font-size: 500%;
+                display: flex;
+                transform: translateY(100%);
+                margin: 0%;
+                width: fit-content;
+                animation: dis 5s ease-in-out; 
+            }
+            #updown:active{
+                display: block;
+            }
+            .pointer-follower{
+                color: #1b1a55d0;
+            }
+            .fas{
+                color: #1b1a55;
+            }
+            #linkers{
+                justify-content: flex-start;
+                flex-flow: row wrap;
+            }
+            #linkers > div,#linkers > a{
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background-color: #ffffff83;
+                margin: 1%;
+                padding: 1%;
+            }
+            #linkers > div > img{
+                width: 100%;
+                height: 100%;
+            }
+            #mute-unmute-btn{
+                top: 90%;
+                left: 3.5%;
+                position: fixed;
+            }
+        }
+        .fas{
+            transition: all 0s;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+        var audio = document.getElementById('background-music');
+        var muteUnmuteBtn = document.getElementById('mute-unmute-btn');
+        var muteIcon = 'fa-volume-xmark';
+        var unmuteIcon = 'fa-volume-high';
+
+        if (audio) {
+            audio.volume = 1;
+
+            muteUnmuteBtn.addEventListener('click', function() {
+                if (audio.muted) {
+                    audio.muted = false;
+                    audio.play();
+                    sessionStorage.setItem("audioOn", true);
+                    muteUnmuteBtn.querySelector('i').classList.remove(muteIcon);
+                    muteUnmuteBtn.querySelector('i').classList.add(unmuteIcon);
+                } else {
+                    audio.muted = true;
+                    audio.pause();
+                    sessionStorage.setItem("audioOn", false);
+                    muteUnmuteBtn.querySelector('i').classList.remove(unmuteIcon);
+                    muteUnmuteBtn.querySelector('i').classList.add(muteIcon);
+                }
+            });
+
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    audio.pause();
+                } else {
+                    if (!audio.muted) {
+                        audio.play();
+                    }
+                }
+            });
+
+            window.addEventListener('load', function() {
+                audio.play().catch(function(e) {
+                    console.log('Autoplay prevented');
+                });
+            });
+        }
+        });
+    </script>
+</head>
+<body>
+    <div class="snow-bg" id="sno"></div>
+    <audio id="background-music" autoplay loop muted>
+        <source src="media/Home(extended version).wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="mute-unmute-btn">
+        <i class="fa-solid fa-volume-xmark fa-xs"></i>
+    </div>
+    <div id="content" style="width: 100%; overflow:visible;" class="poppinsSansSerif" class="pointer-follower">
+        <h1 id="MainHeading">Profile Website</h1>
+        <p>We had a subject called web programming in our second semester and were taught basic html,css and js. I for one thought that it was pretty easy to make a website and anyone could do it. Because of this and the cumbersome testing I was not very fond of this. All my other friends were making pretty cool websites and I felt a bit left out.</p>
+        <p>My end semester exams concluded and left with me a with a very big summer vacation and i thought I could use it to build unique projects. I like making things of my own which struck me with an idea to create a website. I made a rough sketch of what the website should look like and how it would function.Since i had seen many profile websites made by many web designers i decided to create one of my own</p>
+        <p>As I had previously thought, making a website would be very easy. when I started creating, initially nothing was working as I wanted it to and it was very very frustrating.Since I hadn't studied web programming in very detail, I was facing many issues in between. But I kept on trying and things started working out. When i used to get stuck, I would just see a youtube video on it and move on. As I kept coding the website, I saw new new opportunities to improve my website and these detours were very costly, timewise. Nevertheless, it took me 2-3 weeks to create and implement such a simple design.</p> 
+        <p>Surprisingly, the hardest part for me was choosing the color scheme, for which I searched up on youtube and found out about the 60-30-10 rule, which was very helpful. Finally I bought the cheapest domain on my name and fortunately it was my most favourite one.</p>
+        <br>
+        <p>I used github to store and host this website.</p>
+        <span><a href="https://github.com/aryanjsawant/aryanjsawant.github.io" target="_blank" style="text-decoration: wavy;">Click here </a> to view the repository to this website</span>
+    </div>
+
+    <div id="tooltip-template" class="tooltip-template">
+        <span class="tooltip-text">Default Tooltip Text</span>
+    </div>
+    <script>
+        if(!window.matchMedia("(max-width: 600px)").matches){
+        const cursor = new MouseFollower({
+        container: '.pointer-follower',
+        speed: 0.3});}
+
+        function showTooltip(element, text) {
+            const tooltip = document.getElementById('tooltip-template').cloneNode(true);
+            tooltip.removeAttribute('id');
+            tooltip.querySelector('.tooltip-text').textContent = text;
+
+            const rect = element.getBoundingClientRect();
+            tooltip.style.position = 'absolute';
+            tooltip.style.bottom = '1%';
+            tooltip.style.right = '1%';
+
+            document.body.appendChild(tooltip);
+
+            tooltip.style.left = rect.left + window.pageXOffset + 'px';
+            tooltip.style.top = rect.top + window.pageYOffset - tooltip.offsetHeight + 'px';
+
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+
+            setTimeout(() => {
+                tooltip.remove();
+            }, 1500);
+        }
+
+        const muteUnmuteBtn = document.getElementById('mute-unmute-btn');
+        muteUnmuteBtn.addEventListener('mouseover', () => showTooltip(muteUnmuteBtn, 'Music'));
+        // window.addEventListener('DOMContentLoaded',()=>{
+        //     const clipboards = document.querySelectorAll('.ctc');
+        //     clipboards.forEach(clipboard => {
+        //         clipboard.addEventListener('click', () => showTooltip(clipboard, 'Copied to Clipboard'));
+        //     });
+        // });
+    </script>
+</body>
+</html>
