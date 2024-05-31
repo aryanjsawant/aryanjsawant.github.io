@@ -472,7 +472,7 @@ function changeContent() {
               <h3>Contact</h3>
               <div id="linkers">
                   <div class="ctc" onclick="copyGmailt()"><img src="media/icons/7089163_gmail_google_icon.svg" alt="Gmail"></div>
-                  <a href="https://www.linkedin.com/in/aryan-j-sawant/" target="_blank"><div><img src="media/icons/5296501_linkedin_network_linkedin logo_icon.svg" alt="Linked in"></div></a>
+                  <a href="https://www.linkedin.com/in/aryanjsawant/" target="_blank"><div><img src="media/icons/5296501_linkedin_network_linkedin logo_icon.svg" alt="Linked in"></div></a>
               </div>
               <h3>Socials</h3>
               <div id="linkers">
