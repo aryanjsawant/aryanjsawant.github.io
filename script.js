@@ -161,9 +161,26 @@ function welcomeToCreative() {
     document.getElementById('WelcomeContainer').style.display = 'block';
     document.getElementById('Welcome1').style.display = 'block';
     document.getElementById('Welcome2').style.display = 'block';
+    document.getElementById('slider').classList.toggle('tootsieslide');
     setTimeout(function() {
       document.getElementById('WelcomeContainer').style.display = 'none';
     }, 5000);
+    document.getElementById("slider").style.backgroundColor="#FEDCCC";
+    for (const element of document.querySelectorAll('.switch')) {
+      element.style.backgroundColor = "#FF8B80";
+    }
+    for (const element of document.querySelectorAll('.section')) {
+      element.style.backgroundColor = "#F9F8E6";
+    }
+    for (const element of document.querySelectorAll('.switch-container')) {
+      element.style.backgroundColor = "transparent";
+    }
+    for (const element of document.querySelectorAll('.fas')) {
+      element.style.color = "#FF8B80";
+    }
+    setTimeout(function() {
+      document.getElementById('slider').classList.toggle('tootsieslide');
+    }, 6000);
   }
 }
 function toAbout(){
@@ -289,23 +306,25 @@ function changeColorD(){
 }
 function changeColorM(){
   if(x%2!=0){
-    document.getElementById("slider").style.backgroundColor="#FEDCCC";
     document.getElementById("footer").style.backgroundColor="#CE7AD1";
     document.getElementById("Identifier").style.color="#2F2F2F";
     document.getElementById("easterEgg").style.color="#2F2F2F";
     document.getElementById("content").style.backgroundImage="linear-gradient(to bottom, #FEDCCC , transparent)";
     document.getElementById("content").style.color="#2F2F2F";
-    for (const element of document.querySelectorAll('.switch')) {
-      element.style.backgroundColor = "#FF8B80";
-    }
-    for (const element of document.querySelectorAll('.section')) {
-      element.style.backgroundColor = "#F9F8E6";
-    }
-    for (const element of document.querySelectorAll('.switch-container')) {
-      element.style.backgroundColor = "transparent";
-    }
-    for (const element of document.querySelectorAll('.fas')) {
-      element.style.color = "#FF8B80";
+    if(x!=1){
+      document.getElementById("slider").style.backgroundColor="#FEDCCC";
+      for (const element of document.querySelectorAll('.switch')) {
+        element.style.backgroundColor = "#FF8B80";
+      }
+      for (const element of document.querySelectorAll('.section')) {
+        element.style.backgroundColor = "#F9F8E6";
+      }
+      for (const element of document.querySelectorAll('.switch-container')) {
+        element.style.backgroundColor = "transparent";
+      }
+      for (const element of document.querySelectorAll('.fas')) {
+        element.style.color = "#FF8B80";
+      }
     }
   }
   else{
@@ -472,7 +491,7 @@ function changeContent() {
               <h3>Contact</h3>
               <div id="linkers">
                   <div class="ctc" onclick="copyGmailt()"><img src="media/icons/7089163_gmail_google_icon.svg" alt="Gmail"></div>
-                  <a href="https://www.linkedin.com/in/aryanjsawant/" target="_blank"><div><img src="media/icons/5296501_linkedin_network_linkedin logo_icon.svg" alt="Linked in"></div></a>
+                  <a href="https://www.linkedin.com/in/aryan-j-sawant/" target="_blank"><div><img src="media/icons/5296501_linkedin_network_linkedin logo_icon.svg" alt="Linked in"></div></a>
               </div>
               <h3>Socials</h3>
               <div id="linkers">
