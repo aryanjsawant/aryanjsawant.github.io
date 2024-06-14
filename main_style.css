@@ -257,6 +257,20 @@ body{
         background-position: right;
     }
 }
+@keyframes sliderSlide{
+    0%{
+        top: 0%;
+    }
+    25%{
+        top: 85%;
+    }
+    75%{
+        top: 85%;
+    }
+    100%{
+        top: 0%;
+    }
+}
 #slider{
     display: flex;
     margin:1%;
@@ -269,11 +283,15 @@ body{
     border-top-right-radius: 2% 5%;
     border-bottom-left-radius: 2% 5%;
     border-bottom-right-radius: 2% 5%;
+    top: 0%;
     left: 0%;
     right: 100%;
     transition: left 1s ease;
     z-index: 2;
     order: 1;
+}
+.tootsieslide{
+    animation: sliderSlide 6s;
 }
 #content{
     opacity: 1;
@@ -351,9 +369,9 @@ body{
     display: none;
     height: 100%;
     left: 0%;
+    top: 5%;
     width: 85%;
-    order: 2;
-    top: -10%;
+    order: 1;
 }
 #Welcome1,#Welcome2{
     display: none;
