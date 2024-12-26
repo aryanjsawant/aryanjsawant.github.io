@@ -1,0 +1,28 @@
+<h1 id="MainHeading" >Projects</h1>
+<div style="display: flex; flex-flow: row wrap; justify-content: flex-start;">
+    {% for project in projects %}
+        <div class="projectContainer">
+            <a href="projects/{{ project.header|slugify }}" style="text-decoration: none; color: inherit;" target="_blank">
+                {% if c == 0 %}
+                <div class="project projectAlt">
+                    <div class="projectImg projectImgAlt">
+                {% else %}
+                <div class="project">
+                    <div class="projectImg">
+                {% endif %}
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" alt="{{ project.header }}" style="height: 90%; width: 90%; margin: 0px;">
+                        {% else %}
+                            <i class="fa-solid fa-globe fa-7x"></i>
+                        {% endif %}
+                    </div>
+                    <div style="text-align: center;">
+                        <h3>{{ project.header }}</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% empty %}
+        <p>No creative projects available at the moment.</p>
+    {% endfor %}
+</div>

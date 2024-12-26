@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/media/All rounder squad cropped transparent.png">
+    <title>Aryan Sawant</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HVJYLMM7V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-2HVJYLMM7V');
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/main_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../static/js/script.js"></script>
+    <style>
+        @media only screen and (max-width: 600px) {
+            .pointer-follower{
+                color: transparent;
+            }
+        }
+        @media only screen and (min-width: 601px) {
+            .pointer-follower{
+                z-index: 3;
+            }
+        }
+        @media only screen and (max-height: 845px) and (min-width: 1000px) {
+            #slider{
+                width: 12%;
+            }
+        }
+        @media only screen and (max-height: 845px) and (min-width: 1000px) {
+            #slider{
+                width: 10%;
+            }
+        }
+    </style>
+</head>
+<body class="stalebodyt">
+    <div class="snow-bg" id="sno"></div>
+    <audio id="background-music" autoplay loop muted>
+        <source src="../static/media/Home(extended version).wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="slider" class="pointer-follower">
+        <div href="" class="section" id="about" onclick="toAbout(),redirect()">
+            <img src="../static/../static/media/All rounder squad transparent.png" alt="My logo" id="logo">
+        </div>
+        <div id="switchcontcont">
+            <div class="switch-container">
+                <input type="checkbox" name="checkbox" id="toggle" onclick="transition()">
+                <label for="toggle"  class="switch"></label>
+            </div>
+            <div>
+                <p id="Identifier">Technical</p>
+            </div>
+        </div>
+        </a>
+        <a href="#projects" class="section" data-cursor-text="projects" data-cursor-stick onclick="toProjects()"><i class="fas fa-folder-open logo fa-5x"></i></a>
+        <a href="#achievements" class="section" data-cursor-text="achievements" data-cursor-stick onclick="toAchievement()"><i class="fas fa-award logo fa-5x"></i></a>
+        <a id="links" href="#links" class="section" data-cursor-text="links" data-cursor-stick onclick="toLinks()"><i class="fas fa-link fa-5x"></i></a>
+    </div>
+    <div id="mute-unmute-btn">
+        <i class="fa-solid fa-volume-xmark fa-xs"></i>
+    </div>
+    <div id="content" class="poppinsSansSerif" class="pointer-follower">
+        <h1 id="MainHeading">About me</h1>
+        <p>Hey there! I am Aryan Sawant, an undergraduate pursuing a BTech degree in Artificial Intelligence at NIT Surat. Although I havent dived headfirst into the world of AI, I despise doing tedious and repetitive tasks(I'm lazy), but love the concept of training an algorithm to automate them.</p>
+        <p>To prepare myself for this exciting field, I'm currently sharpening my programming skills by delving into Data Structures and Algorithms (DSA) in C++ and building my mathematical foundation with Statistics.</p>
+    </div>
+    <div id="WelcomeContainer">
+        <div id="Welcome1">
+            <p class="lobsterTwoRegular" id="updown">Welcome to my</p>
+        </div>
+        <br>
+        <div class="lobsterTwoRegular" id="Welcome2">
+            <p id="updown">Creative side</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="linkers">
+            <div class="ctc" onclick="copyGmailt()"><img src="../static/media/icons/7089163_gmail_google_icon.svg" alt="Gmail" style="top:3%; left: 5%;"></div>
+            <a href="https://www.instagram.com/aryan_sawant_24/" target="_blank"><div><img src="../static/media/icons/6929237_instagram_icon.svg" alt="Instagram" style="height: 18px; margin-top: 4%; margin-left: 5.2%;"></div></a>
+            <a href="https://www.linkedin.com/in/aryanjsawant/" target="_blank"><div ><img src="../static/media/icons/5296501_linkedin_network_linkedin logo_icon.svg" alt="Linked in" style="margin-top:9%; margin-left: 10%; height: 16px;" ></div></a>
+        </div>
+        <h3 class="title">Links</h3>
+        <div id="linkers">
+            <a href="https://www.youtube.com/@all-roundersquad7252" target="_blank"><div><img src="../static/media/icons/5296521_play_video_vlog_youtube_youtube logo_icon.svg" alt="Youtube"></div></a>
+            <a href="https://open.spotify.com/user/lt44xbicwteh7re74qihtg362?si=3b81d1b66fdc4937" target="_blank"><div><img src="../static/media/icons/9796018_spotify_icon.svg" alt="Spotify"></div></a>
+            <a href="https://www.instagram.com/all_rounder_squad/" target="_blank"><div><img src="../static/media/icons/6929237_instagram_icon.svg" alt="Instagram" style="height: 18px; margin-top: 4%; margin-left: 5.2%;"></div></a>
+        </div>
+        <p style=" font-size: xx-small; bottom: 0px; text-align:right;">Copyright &copy; 2024 <a href="https://www.instagram.com/aerian_official/" target="_blank" style="text-decoration: none; color: inherit;"><span style="font-size: xx-small;"id="easterEgg">Aerian</span></a></p>
+    </div>
+    <div id="tooltip-template" class="tooltip-template">
+        <span class="tooltip-text">Default Tooltip Text</span>
+    </div>
+    <script>
+        if(!window.matchMedia("(max-width: 600px)").matches){
+        const cursor = new MouseFollower({
+        container: '.pointer-follower',
+        speed: 0.3});}
+
+        function showTooltip(element, text) {
+            const tooltip = document.getElementById('tooltip-template').cloneNode(true);
+            tooltip.removeAttribute('id');
+            tooltip.querySelector('.tooltip-text').textContent = text;
+
+            const rect = element.getBoundingClientRect();
+            tooltip.style.position = 'absolute';
+            tooltip.style.bottom = '1%';
+            tooltip.style.right = '1%';
+
+            document.body.appendChild(tooltip);
+
+            tooltip.style.left = rect.left + window.pageXOffset + 'px';
+            tooltip.style.top = rect.top + window.pageYOffset - tooltip.offsetHeight + 'px';
+
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+
+            setTimeout(() => {
+                tooltip.remove();
+            }, 1500);
+        }
+
+        const muteUnmuteBtn = document.getElementById('mute-unmute-btn');
+        muteUnmuteBtn.addEventListener('mouseover', () => showTooltip(muteUnmuteBtn, 'Music'));
+        window.addEventListener('DOMContentLoaded',()=>{
+            const clipboards = document.querySelectorAll('.ctc');
+            clipboards.forEach(clipboard => {
+                clipboard.addEventListener('click', () => showTooltip(clipboard, 'Copied to Clipboard'));
+            });
+        });
+    </script>
+</body>
+</html>
