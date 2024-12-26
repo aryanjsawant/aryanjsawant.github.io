@@ -2,9 +2,10 @@ from django.db import models
 from .processing import processor
 
 class Technical(models.Model):
-    image = models.ImageField(upload_to='technical/', blank=False, null=False)
-    header = models.CharField(max_length=255, blank=False, null=False)
-    description = models.TextField(blank=False, null=False)
+    # image = models.ImageField(upload_to='technical/')
+    image = models.URLField(null=True)
+    header = models.CharField(max_length=255)
+    description = models.TextField()
 
     def save(self, *args, **kwargs):
         # Ensure header is title-cased before saving
@@ -20,9 +21,10 @@ class Technical(models.Model):
 
 
 class Creative(models.Model):
-    image = models.ImageField(upload_to='creative/', blank=False, null=False)
-    header = models.CharField(max_length=255, blank=False, null=False)
-    description = models.TextField(blank=False, null=False)
+    # image = models.ImageField(upload_to='creative/', blank=False, null=False)
+    image = models.URLField(null=True)
+    header = models.CharField(max_length=255)
+    description = models.TextField()
 
     def save(self, *args, **kwargs):
         # Ensure header is title-cased before saving

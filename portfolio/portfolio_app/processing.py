@@ -10,8 +10,8 @@ def processor(paragraph):
     processed_paragraph = ''
     for p in paragraphs:
         if '<a href' in p:
-            processed_paragraph += f'<p><span>{p}</span></p>'
+            processed_paragraph += f'<span>{p}</span>'
         else:
-            processed_paragraph += f'<p>{p}</p>'
+            processed_paragraph += f'<br>{p}'
     
-    return processed_paragraph
+    return '</p>'+processed_paragraph+'</p>'
