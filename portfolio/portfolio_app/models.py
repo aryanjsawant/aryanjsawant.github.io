@@ -2,8 +2,7 @@ from django.db import models
 from .processing import processor
 
 class Technical(models.Model):
-    # image = models.ImageField(upload_to='technical/')
-    image = models.URLField(null=True)
+    image = models.URLField(null=True, max_length=500)
     header = models.CharField(max_length=255)
     description = models.TextField()
 
@@ -21,8 +20,7 @@ class Technical(models.Model):
 
 
 class Creative(models.Model):
-    # image = models.ImageField(upload_to='creative/', blank=False, null=False)
-    image = models.URLField(null=True)
+    image = models.URLField(null=True, max_length=500)
     header = models.CharField(max_length=255)
     description = models.TextField()
 

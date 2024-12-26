@@ -27,7 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = [
+                '127.0.0.1',
+                'https://aryansawant.onrender.com',
+                '13.228.225.19',
+                '18.142.128.26',
+                '54.254.162.138'
+]
 
 
 # Application definition

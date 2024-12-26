@@ -60,4 +60,3 @@ def project_detail(request, project_name):
 
     # If no project found, render a "not found" template or return a 404 response
     return render(request, '404.html', status=404)
-
