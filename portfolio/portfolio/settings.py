@@ -16,8 +16,8 @@ env = environ.Env()
 environ.Env.read_env()  # Reads from a .env file
 
 SECRET_KEY = env('SECRET_KEY')
-# DEBUG = env.bool('DEBUG', default=False)
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
+# DEBUG = True
 
 from pathlib import Path
 
@@ -30,7 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 ALLOWED_HOSTS = [
                 '127.0.0.1',
+                'localhost',
                 'https://aryansawant.onrender.com',
+                'aryansawant.onrender.com',
                 '13.228.225.19',
                 '18.142.128.26',
                 '54.254.162.138'
