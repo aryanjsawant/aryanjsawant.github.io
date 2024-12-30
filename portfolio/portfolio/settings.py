@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,15 +127,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 # settings.py
 
-# This is the URL used to access static files in templates
+
 STATIC_URL = '/static/'
-
-# This is where static files will be collected to
-STATIC_ROOT = BASE_DIR / 'portfolio/staticfiles'
-
-# If you have additional static files during development
-STATICFILES_DIRS = [BASE_DIR / 'portfolio/portfolio_app/static']
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio_app/static')
+    # BASE_DIR / 'portfolio_app/static'
+]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedMainfestStaticFilesStorage"
 
 TEMPLATES = [
     {
