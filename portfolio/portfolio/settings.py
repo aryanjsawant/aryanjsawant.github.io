@@ -124,10 +124,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+# settings.py
 
+# This is the URL used to access static files in templates
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'portfolio_app/static']
+
+# This is where static files will be collected to
+STATIC_ROOT = BASE_DIR / 'portfolio/staticfiles'
+
+# If you have additional static files during development
+STATICFILES_DIRS = [BASE_DIR / 'portfolio/portfolio_app/static']
+
 
 TEMPLATES = [
     {
