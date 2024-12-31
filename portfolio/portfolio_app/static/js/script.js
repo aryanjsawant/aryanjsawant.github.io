@@ -355,8 +355,6 @@ function attachTooltipListeners() {
       clipboard.addEventListener('click', () => showTooltip(clipboard, 'Copied to Clipboard'));
   });
 }
-
-import { supabase } from '.../portfolio/util/supabase.js';
 function changeContent() {
   var content = document.getElementById("content");
 
@@ -372,31 +370,20 @@ function changeContent() {
       section = "links";
   }
 
-  if (x % 2 === 1) {
-    supabase
-      .from('sections') // Make sure 'sections' is the table name
-      .select('content')
-      .eq('section', section)
-      .then(({ data, error }) => {
-        if (error) {
-          console.error('Error fetching section:', error);
-        } else {
-          content.innerHTML = data[0]?.content || 'Content not found'; // Update the content block dynamically
-        }
-      });
-  } else {
-    supabase
-      .from('sections') // Make sure 'sections' is the table name
-      .select('content')
-      .eq('section', section)
-      .then(({ data, error }) => {
-        if (error) {
-          console.error('Error fetching section:', error);
-        } else {
-          content.innerHTML = data[0]?.content || 'Content not found'; // Update the content block dynamically
-        }
-      });
-  }
+  if(x % 2 === 1)
+    fetch(`/update-sectionc?section=${section}`)
+        .then(response => response.json())
+        .then(data => {
+            content.innerHTML = data.content; // Update the content block dynamically
+        })
+        .catch(error => console.error("Error fetching section:", error));
+  else
+    fetch(`/update-sectiont?section=${section}`)
+    .then(response => response.json())
+    .then(data => {
+        content.innerHTML = data.content; // Update the content block dynamically
+    })
+    .catch(error => console.error("Error fetching section:", error));
 }
 
 function handleHashChange() {
