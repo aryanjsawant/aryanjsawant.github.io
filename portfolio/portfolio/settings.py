@@ -156,8 +156,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'  # URL to access media files in development
 MEDIA_ROOT = BASE_DIR / 'media'  # Directory where uploaded files are stored
 
-SUPABASE_URL = 'https://sunmyicoswdaxftcixbb.supabase.co'
-SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1bm15aWNvc3dkYXhmdGNpeGJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUyMDUyMTIsImV4cCI6MjA1MDc4MTIxMn0.-rLZp8pkPQYK2sVxYsJ2d4E6fH2QYJoaGTHs0TjT_PU'
-
-# SUPABASE_URL = os.getenv('NEXT_PUBLIC_SUPABASE_URL', 'https://your-supabase-url.supabase.co')
-# SUPABASE_API_KEY = os.getenv('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'your-supabase-api-key')
+SUPABASE_URL = os.getenv('NEXT_PUBLIC_SUPABASE_URL', 'https://your-supabase-url.supabase.co')
+SUPABASE_API_KEY = os.getenv('NEXT_PUBLIC_SUPABASE_ANON_KEY', 'your-supabase-api-key')
